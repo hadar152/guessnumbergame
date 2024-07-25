@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guessthemilion</title>
+</head>
+<body dir="rtl">
+<center>
+<!-- text label -->
+<h1>guessthemilion</h1>
+
+<!-- input guess -->
+<input id="milionword" placeholder="guessnumber 1-1000" type="number">
+
+<!-- button guess -->
+<button onclick="guess()">guess</button>
+
+<!-- script guess -->
+<script>
+total = document.getElementById("total")
+
+totalpoint = 0;
+
+// body backround color user
+
+document.body.style.backgroundColor = localStorage.getItem("FavColor")
+
+// function guess
+
+function guess(){
+let wordM = document.getElementById("milionword").value
+
+let L = new Audio("lozer.wav") //good sound
+
+let G = new Audio("good.wav") // lozer sound
+
+// guess true
+if(wordM == "9090" || wordM == "2119" || wordM == "1022" || wordM == "3989" || wordM == "3992"){
+alert("good")
+G.play()
+add()
+}
+
+// guess not true
+else{
+alert("lozer")
+L.play()
+}
+}
+</script>
+</center>
+</body>
+</html>
